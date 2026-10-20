@@ -72,6 +72,57 @@ func (ss *SubmissionService) JudgeMCQ(ctx context.Context, submissionID string) 
 	return nil
 }
 
+func (ss *SubmissionService) RunCode(ctx context.Context, contestID, problemID, code, language, stdin string) (*dto.RunCodeResponse, error) {
+	source, err := decodeSource(code)
+	if err != nil || strings.TrimSpace(source) == "" {
+		return nil, common.ErrInvalidCode
+	}
+
+	languageID, err := judge0.LanguageID(language)
+	if err != nil {
+		return nil, common.ErrUnsupportedLanguage
+	}
+
+	problem, err := ss.stores.Problems.GetProblem(ctx, problemID, contestID)
+	if err != nil {
+		return nil, err
+	}
+	if problem.Type != models.Code {
+		return nil, common.ErrNotCodeProblem
+	}
+
+	cpuLimit := float64(problem.TimeLimit) / 1000.0
+	if cpuLimit <= 0 {
+		cpuLimit = 1
+	}
+	memoryLimit := float64(problem.MemoryLimit) * 1024
+	if memoryLimit <= 0 {
+		memoryLimit = 256 * 1024
+	}
+
+	result, err := ss.judge0.Run(ctx, judge0.SubmissionRequest{
+		SourceCode:      source,
+		LanguageID:      languageID,
+		Stdin:           stdin,
+		CPUTimeLimit:    cpuLimit,
+		MemoryLimit:     memoryLimit,
+		CompilerOptions: judge0.CompilerOptions(languageID),
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return &dto.RunCodeResponse{
+		Status:        result.Status.Description,
+		Stdout:        result.Stdout,
+		Stderr:        result.Stderr,
+		CompileOutput: result.CompileOutput,
+		Message:       result.Message,
+		Time:          result.Time,
+		Memory:        result.Memory,
+	}, nil
+}
+
 func (ss *SubmissionService) CreateSubmission(ctx context.Context, userID string, submissionType models.SubmissionType, req *dto.SubmitSubmissionRequest) (string, error) {
 	ctx, cancelPreparation := context.WithTimeout(ctx, 5*time.Second)
 	defer cancelPreparation()

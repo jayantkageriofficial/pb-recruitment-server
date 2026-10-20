@@ -2,11 +2,13 @@ package judge0
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
 	"strings"
+	"sync/atomic"
 	"testing"
 	"time"
 )
@@ -136,6 +138,79 @@ func TestBatchResultValidation(t *testing.T) {
 				t.Fatalf("results = %+v, err = %v", results, err)
 			}
 		})
+	}
+}
+
+func TestRunUsesCustomInputWithoutExpectedOutput(t *testing.T) {
+	var polls atomic.Int32
+	judge := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.Header.Get("X-Auth-Token") != "secret" {
+			t.Errorf("auth token = %q", r.Header.Get("X-Auth-Token"))
+		}
+		if r.URL.Query().Get("base64_encoded") != "false" {
+			t.Errorf("base64_encoded = %q", r.URL.Query().Get("base64_encoded"))
+		}
+
+		switch {
+		case r.Method == http.MethodPost && r.URL.Path == "/submissions":
+			var payload map[string]any
+			if err := json.NewDecoder(r.Body).Decode(&payload); err != nil {
+				t.Errorf("decode submission: %v", err)
+				http.Error(w, "invalid body", http.StatusBadRequest)
+				return
+			}
+			if _, exists := payload["expected_output"]; exists {
+				t.Error("run submission unexpectedly set expected_output")
+			}
+			if _, exists := payload["callback_url"]; exists {
+				t.Error("run submission unexpectedly set callback_url")
+			}
+			if payload["stdin"] != "42\nβ\n" || payload["source_code"] != "print(input())" {
+				t.Errorf("run input = %#v", payload)
+			}
+			if payload["language_id"] != float64(71) {
+				t.Errorf("language_id = %v", payload["language_id"])
+			}
+			w.WriteHeader(http.StatusCreated)
+			_ = json.NewEncoder(w).Encode(map[string]string{"token": "run-token"})
+		case r.Method == http.MethodGet && r.URL.Path == "/submissions/run-token":
+			count := polls.Add(1)
+			if count == 1 {
+				_ = json.NewEncoder(w).Encode(map[string]any{
+					"status": map[string]any{"id": 1, "description": "In Queue"},
+				})
+				return
+			}
+			_ = json.NewEncoder(w).Encode(map[string]any{
+				"status": map[string]any{"id": 3, "description": "Accepted"},
+				"stdout": "42\n", "time": "0.01", "memory": 1024,
+			})
+		default:
+			http.Error(w, "unexpected request", http.StatusNotFound)
+		}
+	}))
+	t.Cleanup(judge.Close)
+
+	client := &Client{
+		baseURL:    judge.URL,
+		authToken:  "secret",
+		httpClient: &http.Client{Timeout: 2 * time.Second},
+	}
+	result, err := client.Run(context.Background(), SubmissionRequest{
+		SourceCode:   "print(input())",
+		LanguageID:   71,
+		Stdin:        "42\nβ\n",
+		CPUTimeLimit: 1,
+		MemoryLimit:  256 * 1024,
+	})
+	if err != nil {
+		t.Fatalf("Run: %v", err)
+	}
+	if result.Status.Description != "Accepted" || result.Stdout != "42\n" || result.Time != "0.01" || result.Memory != 1024 {
+		t.Fatalf("run result = %#v", result)
+	}
+	if polls.Load() < 2 {
+		t.Fatalf("polls = %d, want at least 2", polls.Load())
 	}
 }
 

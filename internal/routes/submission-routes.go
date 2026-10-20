@@ -37,6 +37,13 @@ func AddSubmissionRoutes(
 		middleware.ValidateRequest(new(dto.ListProblemSubmissionsRequest)),
 	)
 
+	// Run code against the user's custom stdin without saving a contest submission.
+	e.POST("/submission/run",
+		submissionController.RunCode,
+		middleware.RequireFirebaseAuth(authClient),
+		middleware.ValidateRequest(new(dto.RunCodeRequest)),
+	)
+
 	// // Submit a solution to a problem in a contest
 	// // The authenticated user can only submit solutions to contests they are registered in
 	// // The request body should contain the contest ID, problem ID, language, and code

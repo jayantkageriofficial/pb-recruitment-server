@@ -225,6 +225,101 @@ func (c *Client) WorkersIdle(ctx context.Context) (bool, error) {
 	return idle, nil
 }
 
+// Run submits one source/stdin pair without expected output and waits for its result.
+// It does not create a persisted contest submission or attach a callback.
+func (c *Client) Run(ctx context.Context, job SubmissionRequest) (*ExecutionResult, error) {
+	if c.baseURL == "" {
+		return nil, fmt.Errorf("%w: JUDGE0_URL is not set", ErrUnavailable)
+	}
+
+	runCtx, cancel := context.WithTimeout(ctx, c.Timeout())
+	defer cancel()
+
+	payload, err := json.Marshal(job)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %v", ErrInvalidResponse, err)
+	}
+
+	createReq, err := http.NewRequestWithContext(
+		runCtx,
+		http.MethodPost,
+		strings.TrimRight(c.baseURL, "/")+"/submissions?base64_encoded=false",
+		bytes.NewReader(payload),
+	)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %v", ErrUnavailable, err)
+	}
+	createReq.Header.Set("Content-Type", "application/json")
+	if c.authToken != "" {
+		createReq.Header.Set("X-Auth-Token", c.authToken)
+	}
+
+	createResp, err := c.httpClient.Do(createReq)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %v", ErrUnavailable, err)
+	}
+	createBody, readErr := io.ReadAll(createResp.Body)
+	createResp.Body.Close()
+	if readErr != nil {
+		return nil, fmt.Errorf("%w: %v", ErrInvalidResponse, readErr)
+	}
+	if createResp.StatusCode != http.StatusCreated && createResp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("%w: status %d: %s", ErrUnavailable, createResp.StatusCode, string(createBody))
+	}
+
+	var created struct {
+		Token string `json:"token"`
+	}
+	if err := json.Unmarshal(createBody, &created); err != nil || created.Token == "" {
+		return nil, fmt.Errorf("%w: submission token is missing or invalid", ErrInvalidResponse)
+	}
+
+	resultURL := fmt.Sprintf(
+		"%s/submissions/%s?base64_encoded=false",
+		strings.TrimRight(c.baseURL, "/"),
+		url.PathEscape(created.Token),
+	)
+	poll := time.NewTicker(250 * time.Millisecond)
+	defer poll.Stop()
+
+	for {
+		resultReq, err := http.NewRequestWithContext(runCtx, http.MethodGet, resultURL, nil)
+		if err != nil {
+			return nil, fmt.Errorf("%w: %v", ErrUnavailable, err)
+		}
+		if c.authToken != "" {
+			resultReq.Header.Set("X-Auth-Token", c.authToken)
+		}
+
+		resultResp, err := c.httpClient.Do(resultReq)
+		if err != nil {
+			return nil, fmt.Errorf("%w: %v", ErrUnavailable, err)
+		}
+		resultBody, readErr := io.ReadAll(resultResp.Body)
+		resultResp.Body.Close()
+		if readErr != nil {
+			return nil, fmt.Errorf("%w: %v", ErrInvalidResponse, readErr)
+		}
+		if resultResp.StatusCode != http.StatusOK {
+			return nil, fmt.Errorf("%w: status %d: %s", ErrUnavailable, resultResp.StatusCode, string(resultBody))
+		}
+
+		var result ExecutionResult
+		if err := json.Unmarshal(resultBody, &result); err != nil {
+			return nil, fmt.Errorf("%w: %v", ErrInvalidResponse, err)
+		}
+		if result.Status.ID >= 3 {
+			return &result, nil
+		}
+
+		select {
+		case <-runCtx.Done():
+			return nil, fmt.Errorf("%w: %v", ErrUnavailable, runCtx.Err())
+		case <-poll.C:
+		}
+	}
+}
+
 func (c *Client) postBatch(ctx context.Context, jobs []SubmissionRequest) ([]SubmissionResult, error) {
 	payload, err := json.Marshal(map[string][]SubmissionRequest{
 		"submissions": jobs,

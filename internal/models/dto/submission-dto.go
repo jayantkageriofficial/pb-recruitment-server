@@ -15,6 +15,24 @@ type SubmitSubmissionResponse struct {
 	SubmissionID string `json:"submission_id"`
 }
 
+type RunCodeRequest struct {
+	ContestID string `json:"contest_id" validate:"required"`
+	ProblemID string `json:"problem_id" validate:"required"`
+	Language  string `json:"language" validate:"required"`
+	Code      string `json:"code" validate:"required,max=100000"`
+	Stdin     string `json:"stdin" validate:"max=100000"`
+}
+
+type RunCodeResponse struct {
+	Status        string `json:"status"`
+	Stdout        string `json:"stdout,omitempty"`
+	Stderr        string `json:"stderr,omitempty"`
+	CompileOutput string `json:"compile_output,omitempty"`
+	Message       string `json:"message,omitempty"`
+	Time          string `json:"time,omitempty"`
+	Memory        int    `json:"memory,omitempty"`
+}
+
 type ListProblemSubmissionsRequest struct {
 	ProblemID string `query:"problem_id" validate:"required"`
 	Page      int    `query:"page" validate:"min=0"`

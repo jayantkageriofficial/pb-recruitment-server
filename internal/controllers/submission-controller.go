@@ -234,3 +234,54 @@ func (sc *SubmissionController) SubmitSolution(ctx echo.Context) error {
 		SubmissionID: submissionID,
 	})
 }
+
+func (sc *SubmissionController) RunCode(ctx echo.Context) error {
+	reqCtx, cancel := context.WithTimeout(ctx.Request().Context(), 15*time.Second)
+	defer cancel()
+
+	userID := ctx.Get(common.AUTH_USER_ID).(string)
+	req, ok := ctx.Get(common.VALIDATED_REQUEST_BODY).(*dto.RunCodeRequest)
+	if !ok {
+		return ctx.JSON(http.StatusInternalServerError, map[string]string{
+			"error": "Internal error: RunCodeRequest DTO not found in context",
+		})
+	}
+
+	err := sc.contestService.GetProblemVisibility(reqCtx, req.ContestID, userID)
+	if err != nil {
+		if errors.Is(err, common.ContestNotFoundError) {
+			return ctx.JSON(http.StatusNotFound, map[string]string{"error": err.Error()})
+		}
+		if errors.Is(err, common.UserNotRegisteredError) || errors.Is(err, common.ContestNotRunningError) {
+			return ctx.JSON(http.StatusForbidden, map[string]string{"error": err.Error()})
+		}
+		return ctx.JSON(http.StatusInternalServerError, map[string]string{
+			"error": "failed to check problem access",
+		})
+	}
+
+	result, err := sc.submissionService.RunCode(
+		reqCtx,
+		req.ContestID,
+		req.ProblemID,
+		req.Code,
+		req.Language,
+		req.Stdin,
+	)
+	if err != nil {
+		switch {
+		case errors.Is(err, common.ErrInvalidCode),
+			errors.Is(err, common.ErrUnsupportedLanguage),
+			errors.Is(err, common.ErrNotCodeProblem):
+			return ctx.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
+		case errors.Is(err, common.ContestNotFoundError):
+			return ctx.JSON(http.StatusNotFound, map[string]string{"error": "problem not found"})
+		case errors.Is(err, judge0.ErrUnavailable), errors.Is(err, judge0.ErrInvalidResponse):
+			return ctx.JSON(http.StatusBadGateway, map[string]string{"error": "code execution service failed"})
+		default:
+			return ctx.JSON(http.StatusInternalServerError, map[string]string{"error": "failed to run code"})
+		}
+	}
+
+	return ctx.JSON(http.StatusOK, result)
+}
