@@ -1,0 +1,1951 @@
+{
+  "generated_at_utc": "2026-11-07T10:27:56.163817+00:00",
+  "branch": "perf/k6-judging-suite",
+  "base_commit": "769677c67240bdb51d33aa845397b62b8da75c6e",
+  "compile_once_source_commit": "dc110f573cd20425f28188984a0d6ddc66c83f78",
+  "production_deployed": false,
+  "production_configuration_changed": false,
+  "production_test_resources_created": 0,
+  "native_capacity_certification": false,
+  "environment": {
+    "os": "Kali 2026.3",
+    "cpu": "AMD Ryzen AI 7 350, 8 cores / 16 threads",
+    "go": "1.26.5",
+    "postgres": "18.6",
+    "ruby": "3.3.8",
+    "active_record": "7.2.3.1",
+    "ruby_pg": "1.7.0",
+    "cpp": "GCC 16.2.0",
+    "java": "OpenJDK 25.0.5-ea, compiler invoked via jdk.compiler module",
+    "k6": "2.3.0 (official archive SHA256 verified)",
+    "db_host": "127.0.0.1",
+    "db_port": 25487,
+    "api_or_judge_native_stack": false
+  },
+  "callback_comparison": {
+    "before": {
+      "runs": [
+        {
+          "callback_p50_ms": 1.040799,
+          "callback_p95_ms": 1.567434,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 34.433413,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.164703,
+          "callback_p95_ms": 4.509953,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 95.924381,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 7.597183,
+          "callback_p95_ms": 18.693315,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 574.382504,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 31.691077,
+          "callback_p95_ms": 57.472303,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 1782.889351,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 150,
+          "pool_wait_ms": 873.083958,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 23.342177,
+          "callback_p95_ms": 48.182682,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 1507.869405,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 66.416967,
+          "callback_p95_ms": 112.364994,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 3350.775722,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 1050,
+          "pool_wait_ms": 41824.996717,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.72014,
+          "callback_p95_ms": 3.321027,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 63.201509,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.415912,
+          "callback_p95_ms": 5.077074,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 103.057035,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 8.348719,
+          "callback_p95_ms": 20.967793,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 642.419013,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 32.245565,
+          "callback_p95_ms": 58.196968,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 1799.809695,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 150,
+          "pool_wait_ms": 902.77835,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 23.190935,
+          "callback_p95_ms": 47.726455,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 1496.161059,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 69.418363,
+          "callback_p95_ms": 119.778599,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 3484.905159,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 1050,
+          "pool_wait_ms": 44890.147584,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.338125,
+          "callback_p95_ms": 2.259019,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 45.337483,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.752432,
+          "callback_p95_ms": 4.945398,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 116.62097,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 9.106297,
+          "callback_p95_ms": 23.368346,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 705.435715,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 33.161448,
+          "callback_p95_ms": 58.745422,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 1810.770731,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 150,
+          "pool_wait_ms": 958.608807,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 25.204874,
+          "callback_p95_ms": 50.932074,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 1595.003028,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 64.652959,
+          "callback_p95_ms": 105.285994,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 3249.792139,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 1050,
+          "pool_wait_ms": 40580.637251,
+          "rounds": 30,
+          "testcase_results": 600
+        }
+      ],
+      "summaries": [
+        {
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 2.259019,
+          "timed_batch_ms_median_of_runs": 45.337483,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 629.4921037384802
+        },
+        {
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 4.945398,
+          "timed_batch_ms_median_of_runs": 103.057035,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 285.16894672653075
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 20.967793,
+          "timed_batch_ms_median_of_runs": 642.419013,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 468.2044364854962
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 58.196968,
+          "timed_batch_ms_median_of_runs": 1799.809695,
+          "pool_wait_ms_median_of_runs": 902.77835,
+          "testcase_completions_per_timed_second": 166.8684607890035
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 48.182682,
+          "timed_batch_ms_median_of_runs": 1507.869405,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 391.38658223104756
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 112.364994,
+          "timed_batch_ms_median_of_runs": 3350.775722,
+          "pool_wait_ms_median_of_runs": 41824.996717,
+          "testcase_completions_per_timed_second": 178.47452434114984
+        }
+      ],
+      "planned_parents": 540,
+      "completed_parents": 540,
+      "planned_testcase_results": 5580,
+      "completed_testcase_results": 5580,
+      "callback_deliveries": 11160,
+      "callback_errors": 0,
+      "pending_measured_parents": 0,
+      "score_mismatches": 0,
+      "native_executions": 0,
+      "native_queue_depth": null,
+      "native_queue_age_seconds": null,
+      "lock_sampling": {
+        "samples": 4987,
+        "requested_interval_ms": 5,
+        "peak_lock_waiters": 24,
+        "lock_wait_pid_samples": {
+          "transactionid": 3486,
+          "tuple": 45638
+        }
+      },
+      "parent_lock_query_calls": 11160,
+      "parent_lock_query_cumulative_ms": 286816.5884030005,
+      "query_stats": [
+        {
+          "query": "SELECT s.id,s.user_id,s.contest_id,s.problem_id,s.status FROM submissions s JOIN submission_executions e ON e.submission_id=s.id WHERE e.id=$1 FOR UPDATE OF s",
+          "calls": 11160,
+          "total_exec_ms": 286816.5884030005,
+          "max_exec_ms": 72.31115100000001,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at) VALUES($1,$1,$2,$3,$4,$5,$6,$7) ON CONFLICT(execution_id) DO UPDATE SET status=EXCLUDED.status,runtime=EXCLUDED.runtime,memory=EXCLUDED.memory",
+          "calls": 5580,
+          "total_exec_ms": 971.2156120000004,
+          "max_exec_ms": 1.2493789999999998,
+          "block_io_ms": 12.125724000000002
+        },
+        {
+          "query": "UPDATE submission_executions SET status=$2,runtime=$3,memory=$4,compile_output=$5,stderr=$6 WHERE id=$1 AND status=$7",
+          "calls": 5580,
+          "total_exec_ms": 704.5956420000012,
+          "max_exec_ms": 1.17559,
+          "block_io_ms": 9.545851000000006
+        },
+        {
+          "query": "SELECT id,status FROM submission_executions WHERE submission_id=$1 ORDER BY id FOR UPDATE",
+          "calls": 11160,
+          "total_exec_ms": 602.5135659999996,
+          "max_exec_ms": 0.447548,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE submission_executions SET judge0_token=$3,\n\t\trecovery_failures=CASE WHEN judge0_token IS NULL THEN $4 ELSE recovery_failures END\n\t\tWHERE id=$1 AND dispatch_attempt=$2 AND status=$5 AND (judge0_token IS NULL OR judge0_token=$3)",
+          "calls": 5580,
+          "total_exec_ms": 219.5627669999997,
+          "max_exec_ms": 2.905158,
+          "block_io_ms": 2.990278999999999
+        },
+        {
+          "query": "SELECT bool_or(status=$2),bool_and(status=$3),COALESCE(sum(runtime),$4),COALESCE(max(memory),$5) FROM submission_executions WHERE submission_id=$1",
+          "calls": 8714,
+          "total_exec_ms": 181.0642370000002,
+          "max_exec_ms": 0.559297,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO submission_executions (id, submission_id, test_case_index, status, created_at, dispatch_payload, dispatch_attempt, dispatch_count, next_recovery_at)\n\t\tSELECT id, $2, idx, $7, $4, convert_to(NULLIF(payload,$8),$9), attempt,\n\t\tCASE WHEN attempt=$10 THEN $11 ELSE $12 END, now()+interval $13\n\t\tFROM unnest($1::uuid[],$3::int[],$5::text[],$6::text[]) AS x(id,idx,payload,attempt)",
+          "calls": 558,
+          "total_exec_ms": 141.587585,
+          "max_exec_ms": 0.874517,
+          "block_io_ms": 4.101864999999998
+        },
+        {
+          "query": "SELECT status,COALESCE(judge0_token,$2),test_case_index,COALESCE(runtime,$3),COALESCE(memory,$4),dispatch_attempt,recovery_claim,dispatch_payload FROM submission_executions WHERE id=$1",
+          "calls": 11160,
+          "total_exec_ms": 113.9833230000008,
+          "max_exec_ms": 0.10359399999999999,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at) VALUES($1,$1,$2,$3,$4,$5,$6,$7) ON CONFLICT(execution_id) DO NOTHING",
+          "calls": 5580,
+          "total_exec_ms": 87.95797299999997,
+          "max_exec_ms": 0.110627,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE rankings SET score=COALESCE((SELECT sum(p.score) FROM problems p WHERE p.contest_id=$1 AND EXISTS(SELECT $3 FROM submissions x WHERE x.contest_id=p.contest_id AND x.problem_id=p.id AND x.user_id=$2 AND x.status=$4)),$5) WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 23.684031999999995,
+          "max_exec_ms": 0.215645,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tSELECT id,id,submission_id,test_case_index::text,\n\t\t\t(CASE WHEN status=$3 THEN $4 ELSE status END)::test_case_status,\n\t\t\tCOALESCE(runtime,$5),COALESCE(memory,$6),$2\n\t\t\tFROM submission_executions WHERE submission_id=$1 AND status<>$7\n\t\t\tON CONFLICT(execution_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 19.360311,
+          "max_exec_ms": 0.169939,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT count(*) FROM test_case_results WHERE submission_id=$1 AND status=$2",
+          "calls": 540,
+          "total_exec_ms": 19.02901,
+          "max_exec_ms": 0.338505,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT status,COALESCE(runtime,$2),COALESCE(memory,$3) FROM submissions WHERE id=$1",
+          "calls": 540,
+          "total_exec_ms": 15.824264000000014,
+          "max_exec_ms": 0.219692,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO rankings(contest_id,user_id,score,hidden,disqualified) VALUES($1,$2,$3,$4,$5) ON CONFLICT(contest_id,user_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 9.963622999999995,
+          "max_exec_ms": 0.38999,
+          "block_io_ms": 0.7154959999999999
+        },
+        {
+          "query": "SELECT score FROM rankings WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 4.116471,
+          "max_exec_ms": 0.031519,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT user_id FROM rankings WHERE contest_id=$1 AND user_id=$2 FOR UPDATE",
+          "calls": 540,
+          "total_exec_ms": 3.188545000000001,
+          "max_exec_ms": 0.086642,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN test_case_results.execution_id IS 'Execution UUID; test_case_id stores the decimal test_case_index for deterministic display order.'",
+          "calls": 18,
+          "total_exec_ms": 0.644428,
+          "max_exec_ms": 0.096551,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.compile_output IS 'Truncated Judge0 compile_output;not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.343174,
+          "max_exec_ms": 0.039504,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.stderr IS 'Truncated Judge0 stderr; internal only, not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.132819,
+          "max_exec_ms": 0.015169,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE submission_executions SET next_recovery_at=GREATEST(next_recovery_at,claim_until)\nWHERE status=$1",
+          "calls": 18,
+          "total_exec_ms": 0.079408,
+          "max_exec_ms": 0.011051,
+          "block_io_ms": 0
+        }
+      ]
+    },
+    "after": {
+      "runs": [
+        {
+          "callback_p50_ms": 1.903913,
+          "callback_p95_ms": 3.11477,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 64.781022,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.387329,
+          "callback_p95_ms": 3.797359,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 93.222832,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 5.133971,
+          "callback_p95_ms": 10.066564,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 288.251638,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 9.473103,
+          "callback_p95_ms": 17.202582,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 504.520879,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 360,
+          "pool_wait_ms": 450.94793,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 10.097222,
+          "callback_p95_ms": 16.363963,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 528.421516,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 13.330615,
+          "callback_p95_ms": 19.705799,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 630.579603,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 2949,
+          "pool_wait_ms": 11507.640804,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.833262,
+          "callback_p95_ms": 2.598875,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 61.253615,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.449967,
+          "callback_p95_ms": 3.573769,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 94.776369,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 5.789568,
+          "callback_p95_ms": 10.253864,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 313.180685,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 9.680882,
+          "callback_p95_ms": 18.288736,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 505.787604,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 358,
+          "pool_wait_ms": 506.937073,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 11.579386,
+          "callback_p95_ms": 19.437397,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 608.957061,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 14.47154,
+          "callback_p95_ms": 22.571131,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 690.109587,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 2963,
+          "pool_wait_ms": 12408.993298,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.742973,
+          "callback_p95_ms": 3.089332,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 62.747932,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.603964,
+          "callback_p95_ms": 3.549716,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 97.259755,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 5.070221,
+          "callback_p95_ms": 10.705279,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 311.284851,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 10.967981,
+          "callback_p95_ms": 20.597838,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 593.447495,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 345,
+          "pool_wait_ms": 514.374128,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 11.428783,
+          "callback_p95_ms": 20.8873,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 614.572953,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 15.802822,
+          "callback_p95_ms": 23.170814,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 728.715514,
+          "errors": false,
+          "max_idle": 5,
+          "max_open": 25,
+          "pool_wait_count": 2836,
+          "pool_wait_ms": 13094.315964,
+          "rounds": 30,
+          "testcase_results": 600
+        }
+      ],
+      "summaries": [
+        {
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 3.089332,
+          "timed_batch_ms_median_of_runs": 62.747932,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 476.73893027697915
+        },
+        {
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 3.573769,
+          "timed_batch_ms_median_of_runs": 94.776369,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 315.5028023029012
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 10.253864,
+          "timed_batch_ms_median_of_runs": 311.284851,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 986.0666870721116
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 18.288736,
+          "timed_batch_ms_median_of_runs": 505.787604,
+          "pool_wait_ms_median_of_runs": 506.937073,
+          "testcase_completions_per_timed_second": 561.1826314888411
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 19.437397,
+          "timed_batch_ms_median_of_runs": 608.957061,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 1027.4256845450514
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 22.571131,
+          "timed_batch_ms_median_of_runs": 690.109587,
+          "pool_wait_ms_median_of_runs": 12408.993298,
+          "testcase_completions_per_timed_second": 878.3038296373501
+        }
+      ],
+      "planned_parents": 540,
+      "completed_parents": 540,
+      "planned_testcase_results": 5580,
+      "completed_testcase_results": 5580,
+      "callback_deliveries": 11160,
+      "callback_errors": 0,
+      "pending_measured_parents": 0,
+      "score_mismatches": 0,
+      "native_executions": 0,
+      "native_queue_depth": null,
+      "native_queue_age_seconds": null,
+      "lock_sampling": {
+        "samples": 2208,
+        "requested_interval_ms": 5,
+        "peak_lock_waiters": 7,
+        "lock_wait_pid_samples": {
+          "transactionid": 539,
+          "tuple": 79
+        }
+      },
+      "parent_lock_query_calls": 4085,
+      "parent_lock_query_cumulative_ms": 71.76099400000001,
+      "query_stats": [
+        {
+          "query": "SELECT submission_id,status,COALESCE(judge0_token,$2),test_case_index,COALESCE(runtime,$3),COALESCE(memory,$4),dispatch_attempt,recovery_claim,dispatch_payload FROM submission_executions WHERE id=$1 FOR NO KEY UPDATE",
+          "calls": 11160,
+          "total_exec_ms": 4760.567481999988,
+          "max_exec_ms": 9.845218,
+          "block_io_ms": 0
+        },
+        {
+          "query": "WITH finalized AS (\n\t\t\tUPDATE submission_executions SET judge0_token=COALESCE(judge0_token,NULLIF($2,$9)),\n\t\t\trecovery_failures=CASE WHEN judge0_token IS NULL AND $2<>$10 THEN $11 ELSE recovery_failures END,\n\t\t\tstatus=$3,runtime=$4,memory=$5,compile_output=$6,stderr=$7\n\t\t\tWHERE id=$1 AND status=$12\n\t\t\tRETURNING id,submission_id,test_case_index,status,runtime,memory\n\t\t) INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tSELECT id,id,submission_id,test_case_index::text,\n\t\t\t(CASE WHEN status=$13 THEN $14 ELSE status END)::test_case_status,runtime,memory,$8\n\t\t\tFROM finalized ON CONFLICT(execution_id) DO UPDATE SET status=EXCLUDED.status,runtime=EXCLUDED.runtime,memory=EXCLUDED.memory",
+          "calls": 5580,
+          "total_exec_ms": 3264.025145999999,
+          "max_exec_ms": 4.416907999999999,
+          "block_io_ms": 16.488629
+        },
+        {
+          "query": "SELECT EXISTS(SELECT $2 FROM submissions s\n\t\tWHERE s.id=$1 AND s.status=$3 AND NOT EXISTS(\n\t\t\tSELECT $4 FROM submission_executions e WHERE e.submission_id=s.id AND e.status=$5))",
+          "calls": 11160,
+          "total_exec_ms": 330.49706399999985,
+          "max_exec_ms": 1.8621759999999998,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE submission_executions SET judge0_token=$3,\n\t\trecovery_failures=CASE WHEN judge0_token IS NULL THEN $4 ELSE recovery_failures END\n\t\tWHERE id=$1 AND dispatch_attempt=$2 AND status=$5 AND (judge0_token IS NULL OR judge0_token=$3)",
+          "calls": 5580,
+          "total_exec_ms": 233.71290499999975,
+          "max_exec_ms": 0.461013,
+          "block_io_ms": 2.333308
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tVALUES($1,$1,$2,$3,$4,$5,$6,$7) ON CONFLICT(execution_id) DO NOTHING",
+          "calls": 5580,
+          "total_exec_ms": 179.37445899999997,
+          "max_exec_ms": 0.874827,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO submission_executions (id, submission_id, test_case_index, status, created_at, dispatch_payload, dispatch_attempt, dispatch_count, next_recovery_at)\n\t\tSELECT id, $2, idx, $7, $4, convert_to(NULLIF(payload,$8),$9), attempt,\n\t\tCASE WHEN attempt=$10 THEN $11 ELSE $12 END, now()+interval $13\n\t\tFROM unnest($1::uuid[],$3::int[],$5::text[],$6::text[]) AS x(id,idx,payload,attempt)",
+          "calls": 558,
+          "total_exec_ms": 150.3324399999999,
+          "max_exec_ms": 0.9777690000000001,
+          "block_io_ms": 5.708245
+        },
+        {
+          "query": "SELECT user_id,contest_id FROM submissions WHERE id=$1 AND status=$2 FOR NO KEY UPDATE SKIP LOCKED",
+          "calls": 4085,
+          "total_exec_ms": 71.76099400000001,
+          "max_exec_ms": 1.7531109999999999,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE rankings SET score=COALESCE((SELECT sum(p.score) FROM problems p WHERE p.contest_id=$1 AND EXISTS(SELECT $3 FROM submissions x WHERE x.contest_id=p.contest_id AND x.problem_id=p.id AND x.user_id=$2 AND x.status=$4)),$5) WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 31.001374,
+          "max_exec_ms": 0.36445200000000005,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tSELECT id,id,submission_id,test_case_index::text,\n\t\t\t(CASE WHEN status=$3 THEN $4 ELSE status END)::test_case_status,\n\t\t\tCOALESCE(runtime,$5),COALESCE(memory,$6),$2\n\t\t\tFROM submission_executions WHERE submission_id=$1 AND status<>$7\n\t\t\tON CONFLICT(execution_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 26.841781999999995,
+          "max_exec_ms": 0.250129,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT count(*) FROM test_case_results WHERE submission_id=$1 AND status=$2",
+          "calls": 540,
+          "total_exec_ms": 17.870067000000002,
+          "max_exec_ms": 0.23327699999999998,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT bool_or(status=$2),\n\t\tCASE WHEN bool_and(status=$3) THEN $4\n\t\tWHEN bool_or(status=$5) THEN $6\n\t\tWHEN bool_or(status=$7) THEN $8\n\t\tWHEN bool_or(status=$9) THEN $10\n\t\tWHEN bool_or(status=$11) THEN $12 ELSE $13 END,\n\t\tCOALESCE(sum(runtime),$14),COALESCE(max(memory),$15)\n\t\tFROM submission_executions WHERE submission_id=$1",
+          "calls": 540,
+          "total_exec_ms": 17.489281999999996,
+          "max_exec_ms": 0.255448,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO rankings(contest_id,user_id,score,hidden,disqualified) VALUES($1,$2,$3,$4,$5) ON CONFLICT(contest_id,user_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 13.58066399999999,
+          "max_exec_ms": 0.5387080000000001,
+          "block_io_ms": 0.8688569999999999
+        },
+        {
+          "query": "SELECT status,COALESCE(runtime,$2),COALESCE(memory,$3) FROM submissions WHERE id=$1",
+          "calls": 540,
+          "total_exec_ms": 11.952619999999985,
+          "max_exec_ms": 0.105237,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT user_id FROM rankings WHERE contest_id=$1 AND user_id=$2 FOR UPDATE",
+          "calls": 540,
+          "total_exec_ms": 4.255258000000001,
+          "max_exec_ms": 0.045835,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT score FROM rankings WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 3.479928999999997,
+          "max_exec_ms": 0.022442,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN test_case_results.execution_id IS 'Execution UUID; test_case_id stores the decimal test_case_index for deterministic display order.'",
+          "calls": 18,
+          "total_exec_ms": 0.5503910000000001,
+          "max_exec_ms": 0.051125,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.compile_output IS 'Truncated Judge0 compile_output;not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.404409,
+          "max_exec_ms": 0.046938,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.stderr IS 'Truncated Judge0 stderr; internal only, not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.14919000000000002,
+          "max_exec_ms": 0.01588,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE submission_executions SET next_recovery_at=GREATEST(next_recovery_at,claim_until)\nWHERE status=$1",
+          "calls": 18,
+          "total_exec_ms": 0.07082200000000001,
+          "max_exec_ms": 0.008175,
+          "block_io_ms": 0
+        }
+      ]
+    },
+    "idle25": {
+      "runs": [
+        {
+          "callback_p50_ms": 2.178227,
+          "callback_p95_ms": 3.535268,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 73.201907,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.688723,
+          "callback_p95_ms": 4.049881,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 100.195943,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.09931,
+          "callback_p95_ms": 4.96281,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 135.272412,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 3.790256,
+          "callback_p95_ms": 6.284003,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 189.853183,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 569,
+          "pool_wait_ms": 389.088857,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 2.560884,
+          "callback_p95_ms": 5.042789,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 163.390759,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 4.693385,
+          "callback_p95_ms": 7.127201,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 241.497632,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 2907,
+          "pool_wait_ms": 4513.008186,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.878045,
+          "callback_p95_ms": 3.42443,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 63.570629,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.515289,
+          "callback_p95_ms": 4.336428,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 99.638275,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.060777,
+          "callback_p95_ms": 4.661385,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 127.40889,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 3.701178,
+          "callback_p95_ms": 5.858967,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 177.742423,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 611,
+          "pool_wait_ms": 385.046876,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 2.595839,
+          "callback_p95_ms": 15.103994,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 179.909278,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 4.704125,
+          "callback_p95_ms": 9.649413,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 260.688017,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 2693,
+          "pool_wait_ms": 4715.209533,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 1.872024,
+          "callback_p95_ms": 3.244003,
+          "callbacks": 30,
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 63.742813,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.821662,
+          "callback_p95_ms": 4.057987,
+          "callbacks": 90,
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 106.289267,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 30
+        },
+        {
+          "callback_p50_ms": 2.202773,
+          "callback_p95_ms": 4.776,
+          "callbacks": 300,
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 129.80906,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 3.676812,
+          "callback_p95_ms": 5.710589,
+          "callbacks": 900,
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 182.944733,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 579,
+          "pool_wait_ms": 376.343288,
+          "rounds": 30,
+          "testcase_results": 300
+        },
+        {
+          "callback_p50_ms": 2.695977,
+          "callback_p95_ms": 5.52346,
+          "callbacks": 600,
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "elapsed_ms": 170.626106,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 0,
+          "pool_wait_ms": 0,
+          "rounds": 30,
+          "testcase_results": 600
+        },
+        {
+          "callback_p50_ms": 4.78128,
+          "callback_p95_ms": 8.174121,
+          "callbacks": 1800,
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "elapsed_ms": 259.235148,
+          "errors": false,
+          "max_idle": 25,
+          "max_open": 25,
+          "pool_wait_count": 2761,
+          "pool_wait_ms": 4737.48206,
+          "rounds": 30,
+          "testcase_results": 600
+        }
+      ],
+      "summaries": [
+        {
+          "cases": 1,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 3.42443,
+          "timed_batch_ms_median_of_runs": 63.742813,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 448.8434448975774
+        },
+        {
+          "cases": 1,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 4.057987,
+          "timed_batch_ms_median_of_runs": 100.195943,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 293.9990050093674
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 4.776,
+          "timed_batch_ms_median_of_runs": 129.80906,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 2293.049937363812
+        },
+        {
+          "cases": 10,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 5.858967,
+          "timed_batch_ms_median_of_runs": 182.944733,
+          "pool_wait_ms_median_of_runs": 385.046876,
+          "testcase_completions_per_timed_second": 1634.7575940298173
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 1,
+          "callback_p95_ms_median_of_runs": 5.52346,
+          "timed_batch_ms_median_of_runs": 170.626106,
+          "pool_wait_ms_median_of_runs": 0,
+          "testcase_completions_per_timed_second": 3502.4487944759017
+        },
+        {
+          "cases": 20,
+          "deliveries_per_case": 3,
+          "callback_p95_ms_median_of_runs": 8.174121,
+          "timed_batch_ms_median_of_runs": 259.235148,
+          "pool_wait_ms_median_of_runs": 4715.209533,
+          "testcase_completions_per_timed_second": 2364.0016231392747
+        }
+      ],
+      "planned_parents": 540,
+      "completed_parents": 540,
+      "planned_testcase_results": 5580,
+      "completed_testcase_results": 5580,
+      "callback_deliveries": 11160,
+      "callback_errors": 0,
+      "pending_measured_parents": 0,
+      "score_mismatches": 0,
+      "native_executions": 0,
+      "native_queue_depth": null,
+      "native_queue_age_seconds": null,
+      "lock_sampling": {
+        "samples": 1567,
+        "requested_interval_ms": 5,
+        "peak_lock_waiters": 17,
+        "lock_wait_pid_samples": {
+          "transactionid": 947,
+          "tuple": 362,
+          "extend": 10
+        }
+      },
+      "parent_lock_query_calls": 6888,
+      "parent_lock_query_cumulative_ms": 72.266406,
+      "query_stats": [
+        {
+          "query": "SELECT submission_id,status,COALESCE(judge0_token,$2),test_case_index,COALESCE(runtime,$3),COALESCE(memory,$4),dispatch_attempt,recovery_claim,dispatch_payload FROM submission_executions WHERE id=$1 FOR NO KEY UPDATE",
+          "calls": 11160,
+          "total_exec_ms": 7870.268989999994,
+          "max_exec_ms": 7.135948,
+          "block_io_ms": 0
+        },
+        {
+          "query": "WITH finalized AS (\n\t\t\tUPDATE submission_executions SET judge0_token=COALESCE(judge0_token,NULLIF($2,$9)),\n\t\t\trecovery_failures=CASE WHEN judge0_token IS NULL AND $2<>$10 THEN $11 ELSE recovery_failures END,\n\t\t\tstatus=$3,runtime=$4,memory=$5,compile_output=$6,stderr=$7\n\t\t\tWHERE id=$1 AND status=$12\n\t\t\tRETURNING id,submission_id,test_case_index,status,runtime,memory\n\t\t) INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tSELECT id,id,submission_id,test_case_index::text,\n\t\t\t(CASE WHEN status=$13 THEN $14 ELSE status END)::test_case_status,runtime,memory,$8\n\t\t\tFROM finalized ON CONFLICT(execution_id) DO UPDATE SET status=EXCLUDED.status,runtime=EXCLUDED.runtime,memory=EXCLUDED.memory",
+          "calls": 5580,
+          "total_exec_ms": 2175.466980999999,
+          "max_exec_ms": 2.595939,
+          "block_io_ms": 15.766123000000002
+        },
+        {
+          "query": "UPDATE submission_executions SET judge0_token=$3,\n\t\trecovery_failures=CASE WHEN judge0_token IS NULL THEN $4 ELSE recovery_failures END\n\t\tWHERE id=$1 AND dispatch_attempt=$2 AND status=$5 AND (judge0_token IS NULL OR judge0_token=$3)",
+          "calls": 5580,
+          "total_exec_ms": 217.21375199999983,
+          "max_exec_ms": 0.356016,
+          "block_io_ms": 2.689661000000001
+        },
+        {
+          "query": "SELECT EXISTS(SELECT $2 FROM submissions s\n\t\tWHERE s.id=$1 AND s.status=$3 AND NOT EXISTS(\n\t\t\tSELECT $4 FROM submission_executions e WHERE e.submission_id=s.id AND e.status=$5))",
+          "calls": 11160,
+          "total_exec_ms": 215.66568500000005,
+          "max_exec_ms": 0.884105,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO submission_executions (id, submission_id, test_case_index, status, created_at, dispatch_payload, dispatch_attempt, dispatch_count, next_recovery_at)\n\t\tSELECT id, $2, idx, $7, $4, convert_to(NULLIF(payload,$8),$9), attempt,\n\t\tCASE WHEN attempt=$10 THEN $11 ELSE $12 END, now()+interval $13\n\t\tFROM unnest($1::uuid[],$3::int[],$5::text[],$6::text[]) AS x(id,idx,payload,attempt)",
+          "calls": 558,
+          "total_exec_ms": 135.86332099999998,
+          "max_exec_ms": 1.005232,
+          "block_io_ms": 4.649933000000001
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tVALUES($1,$1,$2,$3,$4,$5,$6,$7) ON CONFLICT(execution_id) DO NOTHING",
+          "calls": 5580,
+          "total_exec_ms": 92.03325700000002,
+          "max_exec_ms": 0.257533,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT user_id,contest_id FROM submissions WHERE id=$1 AND status=$2 FOR NO KEY UPDATE SKIP LOCKED",
+          "calls": 6888,
+          "total_exec_ms": 72.266406,
+          "max_exec_ms": 1.9250440000000002,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT count(*) FROM test_case_results WHERE submission_id=$1 AND status=$2",
+          "calls": 540,
+          "total_exec_ms": 29.187148000000004,
+          "max_exec_ms": 0.46534099999999995,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE rankings SET score=COALESCE((SELECT sum(p.score) FROM problems p WHERE p.contest_id=$1 AND EXISTS(SELECT $3 FROM submissions x WHERE x.contest_id=p.contest_id AND x.problem_id=p.id AND x.user_id=$2 AND x.status=$4)),$5) WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 23.146761,
+          "max_exec_ms": 0.172904,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO test_case_results(id,execution_id,submission_id,test_case_id,status,runtime,memory,created_at)\n\t\t\tSELECT id,id,submission_id,test_case_index::text,\n\t\t\t(CASE WHEN status=$3 THEN $4 ELSE status END)::test_case_status,\n\t\t\tCOALESCE(runtime,$5),COALESCE(memory,$6),$2\n\t\t\tFROM submission_executions WHERE submission_id=$1 AND status<>$7\n\t\t\tON CONFLICT(execution_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 23.084341000000002,
+          "max_exec_ms": 0.20679699999999998,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT bool_or(status=$2),\n\t\tCASE WHEN bool_and(status=$3) THEN $4\n\t\tWHEN bool_or(status=$5) THEN $6\n\t\tWHEN bool_or(status=$7) THEN $8\n\t\tWHEN bool_or(status=$9) THEN $10\n\t\tWHEN bool_or(status=$11) THEN $12 ELSE $13 END,\n\t\tCOALESCE(sum(runtime),$14),COALESCE(max(memory),$15)\n\t\tFROM submission_executions WHERE submission_id=$1",
+          "calls": 540,
+          "total_exec_ms": 16.043781000000003,
+          "max_exec_ms": 0.27708900000000003,
+          "block_io_ms": 0
+        },
+        {
+          "query": "INSERT INTO rankings(contest_id,user_id,score,hidden,disqualified) VALUES($1,$2,$3,$4,$5) ON CONFLICT(contest_id,user_id) DO NOTHING",
+          "calls": 540,
+          "total_exec_ms": 12.094348999999989,
+          "max_exec_ms": 0.5584849999999999,
+          "block_io_ms": 0.919527
+        },
+        {
+          "query": "SELECT status,COALESCE(runtime,$2),COALESCE(memory,$3) FROM submissions WHERE id=$1",
+          "calls": 540,
+          "total_exec_ms": 9.690401000000007,
+          "max_exec_ms": 0.066024,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT user_id FROM rankings WHERE contest_id=$1 AND user_id=$2 FOR UPDATE",
+          "calls": 540,
+          "total_exec_ms": 3.3077219999999987,
+          "max_exec_ms": 0.038852,
+          "block_io_ms": 0
+        },
+        {
+          "query": "SELECT score FROM rankings WHERE contest_id=$1 AND user_id=$2",
+          "calls": 540,
+          "total_exec_ms": 2.865142000000001,
+          "max_exec_ms": 0.030808000000000002,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN test_case_results.execution_id IS 'Execution UUID; test_case_id stores the decimal test_case_index for deterministic display order.'",
+          "calls": 18,
+          "total_exec_ms": 0.694558,
+          "max_exec_ms": 0.089598,
+          "block_io_ms": 0.04305
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.compile_output IS 'Truncated Judge0 compile_output;not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.42544899999999997,
+          "max_exec_ms": 0.083426,
+          "block_io_ms": 0
+        },
+        {
+          "query": "COMMENT ON COLUMN submission_executions.stderr IS 'Truncated Judge0 stderr; internal only, not to be returned by submission details.'",
+          "calls": 18,
+          "total_exec_ms": 0.144501,
+          "max_exec_ms": 0.013325,
+          "block_io_ms": 0
+        },
+        {
+          "query": "UPDATE submission_executions SET next_recovery_at=GREATEST(next_recovery_at,claim_until)\nWHERE status=$1",
+          "calls": 18,
+          "total_exec_ms": 0.07390799999999999,
+          "max_exec_ms": 0.007012999999999999,
+          "block_io_ms": 0
+        }
+      ]
+    }
+  },
+  "compiler_comparison": {
+    "runs": [
+      {
+        "language_id": 54,
+        "mode": "baseline",
+        "round": 1,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 1924.831742999686,
+        "process_and_child_cpu_ms": 1926.617,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 54,
+        "mode": "compile_once",
+        "round": 1,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 237.22110500011695,
+        "process_and_child_cpu_ms": 231.58999999999895,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 54,
+        "mode": "compile_once",
+        "round": 2,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 222.36299900032463,
+        "process_and_child_cpu_ms": 217.2590000000004,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 54,
+        "mode": "baseline",
+        "round": 2,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 1936.233448999701,
+        "process_and_child_cpu_ms": 1948.6870000000004,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 54,
+        "mode": "baseline",
+        "round": 3,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 1951.9012010000552,
+        "process_and_child_cpu_ms": 1963.6390000000001,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 54,
+        "mode": "compile_once",
+        "round": 3,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 217.59666200023275,
+        "process_and_child_cpu_ms": 212.30499999999998,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "baseline",
+        "round": 1,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 2551.562370999818,
+        "process_and_child_cpu_ms": 8000.633999999998,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "compile_once",
+        "round": 1,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 575.9147450003184,
+        "process_and_child_cpu_ms": 1371.5909999999965,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "compile_once",
+        "round": 2,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 601.2226459997692,
+        "process_and_child_cpu_ms": 1397.5100000000027,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "baseline",
+        "round": 2,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 2560.9202219998224,
+        "process_and_child_cpu_ms": 7958.394999999994,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "baseline",
+        "round": 3,
+        "testcase_executions": 10,
+        "compiler_invocations": 10,
+        "elapsed_ms": 2624.3038669999805,
+        "process_and_child_cpu_ms": 8024.014000000003,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      },
+      {
+        "language_id": 62,
+        "mode": "compile_once",
+        "round": 3,
+        "testcase_executions": 10,
+        "compiler_invocations": 1,
+        "elapsed_ms": 577.5092550002228,
+        "process_and_child_cpu_ms": 1374.4570000000022,
+        "expected_outputs": 10,
+        "native_sandbox": false,
+        "api_or_queue": false
+      }
+    ],
+    "summaries": [
+      {
+        "language_id": 54,
+        "name": "C++",
+        "baseline": {
+          "elapsed_ms_median": 1936.233448999701,
+          "process_and_child_cpu_ms_median": 1948.6870000000004,
+          "compiler_invocations_per_ten_cases": 10
+        },
+        "compile_once": {
+          "elapsed_ms_median": 222.36299900032463,
+          "process_and_child_cpu_ms_median": 217.2590000000004,
+          "compiler_invocations_per_ten_cases": 1
+        }
+      },
+      {
+        "language_id": 62,
+        "name": "Java",
+        "baseline": {
+          "elapsed_ms_median": 2560.9202219998224,
+          "process_and_child_cpu_ms_median": 8000.633999999998,
+          "compiler_invocations_per_ten_cases": 10
+        },
+        "compile_once": {
+          "elapsed_ms_median": 577.5092550002228,
+          "process_and_child_cpu_ms_median": 1374.4570000000022,
+          "compiler_invocations_per_ten_cases": 1
+        }
+      }
+    ],
+    "verified_outputs": 120,
+    "native_sandbox": false,
+    "compiler_invocations_baseline": 60,
+    "compiler_invocations_compile_once": 6
+  },
+  "validation": {
+    "go_race": {
+      "pass": 444,
+      "skip": 4
+    },
+    "go_skips": [
+      "TestCallbackContentionMeasurement",
+      "TestLiveJudge0Callbacks",
+      "TestLiveJudge0BlankOutputPolling",
+      "TestLiveJudge0Smoke"
+    ],
+    "go_build": true,
+    "go_vet": true,
+    "ruby_artifacts": {
+      "tests": 4,
+      "assertions": 11,
+      "failures": 0
+    },
+    "ruby_postgres_and_host_compilers": {
+      "tests": 6,
+      "assertions": 35,
+      "failures": 0
+    },
+    "compiler_benchmark": {
+      "tests": 1,
+      "assertions": 372,
+      "failures": 0
+    },
+    "k6_inspect": {
+      "k6": "k6 v2.3.0 (commit/e088784614, go1.26.8, linux/amd64)",
+      "checks": [
+        {
+          "profile": "smoke",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "baseline",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "deadline",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "stress",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "spike",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "soak",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "breakpoint",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "volume",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "scalability",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "recovery",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "resilience",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "fairness",
+          "workload": "default",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "journey",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "arrival",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "burst",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "runs",
+          "valid": true
+        },
+        {
+          "profile": "expected",
+          "workload": "mixed",
+          "valid": true
+        },
+        {
+          "profile": "direct-judge",
+          "workload": "isolated direct execution",
+          "valid": true
+        }
+      ]
+    },
+    "python_harness_tests": 5,
+    "node_arithmetic_encoding_and_pacing_checks": true,
+    "simulated_600_submission_scenarios": [
+      "judge0_load_test.go:350: participants=600 cases=10 queueLimit=0 DBpool=25 DBidle=5 create=576.692827ms p95=563.06656ms p99=568.932811ms finalize=6.047037954s POST=600 GET=300 admitted=6000 refused=0 DBwaits=8362 DBwaitTotal=4m48.022089646s idleClosed=4530",
+      "judge0_load_test.go:350: participants=600 cases=10 queueLimit=0 DBpool=25 DBidle=5 create=563.875953ms p95=553.244253ms p99=557.347423ms finalize=16.778632745s POST=600 GET=18 admitted=6000 refused=0 DBwaits=33650 DBwaitTotal=20m27.624157125s idleClosed=40",
+      "judge0_load_test.go:350: participants=600 cases=10 queueLimit=100 DBpool=25 DBidle=5 create=689.306817ms p95=674.342348ms p99=679.704875ms finalize=28.232139689s POST=6500 GET=300 admitted=6000 refused=590 DBwaits=9539 DBwaitTotal=8m10.795997826s idleClosed=8077"
+    ]
+  },
+  "public_contest_configuration": {
+    "at_utc": "2026-11-07T10:26:16.588718+00:00",
+    "public_contests": 11,
+    "configurations": [
+      {
+        "duration_minutes": 30.0,
+        "http_status": 403
+      },
+      {
+        "duration_minutes": 2881.0,
+        "http_status": 403
+      },
+      {
+        "duration_minutes": 10.0,
+        "coding_problems": 3,
+        "mcq_problems": 2,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 31.0,
+        "coding_problems": 1,
+        "mcq_problems": 0,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 6.0,
+        "coding_problems": 1,
+        "mcq_problems": 2,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 3.0,
+        "coding_problems": 2,
+        "mcq_problems": 1,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 6.0,
+        "coding_problems": 1,
+        "mcq_problems": 1,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 10.0,
+        "coding_problems": 0,
+        "mcq_problems": 0,
+        "problem_fields": []
+      },
+      {
+        "duration_minutes": 5.0,
+        "coding_problems": 1,
+        "mcq_problems": 1,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 4.26595,
+        "coding_problems": 1,
+        "mcq_problems": 1,
+        "problem_fields": [
+          "id",
+          "memory_limit",
+          "name",
+          "score",
+          "time_limit",
+          "type"
+        ]
+      },
+      {
+        "duration_minutes": 90721.0,
+        "http_status": 403
+      }
+    ],
+    "matching_10_mcq_5_code_120_minutes": 0,
+    "hidden_testcase_costs_available": false
+  },
+  "cleanup": {
+    "local_test_schemas_remaining": 0,
+    "production_accounts_created": 0,
+    "production_contests_created": 0,
+    "production_submissions_created": 0,
+    "production_object_keys_created": 0,
+    "production_native_records_deleted": 0,
+    "historical_native_records_reaudited": false,
+    "shared_production_run_capacity_touched": false,
+    "temporary_remote_source_worktree_removed": true,
+    "temporary_remote_branch_removed": true,
+    "local_postgres_stopped": true,
+    "local_pgdata_removed": true
+  },
+  "go_no_go": {
+    "isolated_full_stack_evaluation": "GO",
+    "production_rollout": "NO-GO",
+    "600_participant_capacity_certification": "NO-GO"
+  },
+  "unexecuted": [
+    "Combined native API/Judge0 smoke, baseline, average arrivals and corrected participant journey",
+    "Native deadline, spike, stress/breakpoint, fault and interruption tests",
+    "120-minute representative soak",
+    "Callback timeout 10s and worker-count 8/12/16 configuration experiments",
+    "Native per-case memory/output limits, full MCQ journey and actual recruitment problem costs",
+    "Native queue drain/age, callback HTTP retry rate and end-to-end receipt/verdict throughput comparison"
+  ],
+  "application_source_sha256": {
+    "internal/stores/execution-store.go": "a37f22845f1c3c4317c593e9cce67484669319d81203c9791c861bfad6cc2f6f",
+    "internal/services/submission-service.go": "2620ab3be1d22e982d75e74e1f8cef5a6278dc0cb88340124a94ef3cd1144454",
+    "internal/judge0/types.go": "1608d2301b345083808296c2faff45e007194b6eef4747c64c888e2186a90e19",
+    "judge0/compile-once/lib/compilation_cache.rb": "960581ee2108c5162931c0cd198cdb48bf55c417e284b3f1858b2d4cbbc8bf05"
+  },
+  "publication": {
+    "report_only": true,
+    "measured_application_changes_published": false,
+    "measured_implementation_location": "uncommitted local perf/k6-judging-suite worktree"
+  }
+}

@@ -4,6 +4,11 @@ Start work from **`perf/k6-judging-suite`** in `pointblank-club/pb-recruitment-s
 
 Implement justified optimisations, then measure them. Use the smallest complete change, official k6 documentation, and applicable `AGENTS.md` instructions.
 
+The [7 November local implementation report](OPTIMISATION-20261107.md) records
+the callback changes, the ported compile-once candidate, isolated microbenchmarks,
+regression checks and remaining production-readiness gates. It does not replace
+the historical production measurements below. No production rollout is authorized.
+
 ## Read first
 
 - [Callback retest and conclusions](CALLBACK-RETEST-20261107.md)
